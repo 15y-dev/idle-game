@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://c6sn7bosxfd2t"]
+
+[ext_resource type="Script" uid="uid://bfr6mo7m3lf3" path="res://upgrade_data.gd" id="1_k4q5p"]
+
+[resource]
+script = ExtResource("1_k4q5p")
+name = "Grandma"
+cost = 100.0
+cps_bonus = 0.5
+metadata/_custom_type_script = "uid://bfr6mo7m3lf3"

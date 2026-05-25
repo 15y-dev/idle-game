@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://blf4lysutreut"]
+
+[ext_resource type="Script" uid="uid://bc3gx517uy3i0" path="res://upgrade_item.gd" id="1_jncux"]
+
+[node name="UpgradeItem" type="Button" unique_id=217033160]
+custom_minimum_size = Vector2(240, 72)
+script = ExtResource("1_jncux")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1082436704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=1677465101]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="VBoxContainer" unique_id=347867690]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EffectLabel" type="Label" parent="VBoxContainer" unique_id=750534892]
+unique_name_in_owner = true
+layout_mode = 2

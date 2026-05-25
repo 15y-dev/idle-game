@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ceala7hiojdh4"]
+
+[ext_resource type="Script" uid="uid://b1kmwnuhuyfe4" path="res://game_manager.gd" id="1_ig7tw"]
+[ext_resource type="Resource" uid="uid://d02fddqbedame" path="res://game_data.tres" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://blf4lysutreut" path="res://upgrade_item.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node" unique_id=1802314217]
+
+[node name="GameManager" type="Node" parent="." unique_id=627212884 node_paths=PackedStringArray("cookie_label", "cps_label", "upgrade_list")]
+script = ExtResource("1_ig7tw")
+data = ExtResource("2_0xm2m")
+cookie_label = NodePath("../UI/Root/ResourcePanel/CookieLabel")
+cps_label = NodePath("../UI/Root/ResourcePanel/CpsLabel")
+upgrade_list = NodePath("../UI/Root/UpgradePanel/UpgradeList")
+upgrade_item_scene = ExtResource("3_h2yge")
+
+[node name="Timer" type="Timer" parent="GameManager" unique_id=1782013482]
+autostart = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1530825836]
+
+[node name="Root" type="Control" parent="UI" unique_id=1899331320]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResourcePanel" type="VBoxContainer" parent="UI/Root" unique_id=1313064402]
+layout_mode = 1
+offset_right = 300.0
+offset_bottom = 200.0
+
+[node name="CookieLabel" type="Label" parent="UI/Root/ResourcePanel" unique_id=772779214]
+layout_mode = 2
+text = "Cookies: 0"
+
+[node name="CpsLabel" type="Label" parent="UI/Root/ResourcePanel" unique_id=453567789]
+layout_mode = 2
+text = "per second: 0"
+
+[node name="ClickButton" type="Button" parent="UI/Root/ResourcePanel" unique_id=1284996711]
+layout_mode = 2
+text = "クリック！"
+
+[node name="ResetButton" type="Button" parent="UI/Root/ResourcePanel" unique_id=1736631457]
+layout_mode = 2
+text = "リセット"
+
+[node name="UpgradePanel" type="ScrollContainer" parent="UI/Root" unique_id=2138301920]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_bottom = 600.0
+grow_horizontal = 0
+
+[node name="UpgradeList" type="VBoxContainer" parent="UI/Root/UpgradePanel" unique_id=777819787]
+layout_mode = 2
+
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/Root/ResourcePanel/ClickButton" to="GameManager" method="_on_click_button_pressed"]
+[connection signal="pressed" from="UI/Root/ResourcePanel/ResetButton" to="GameManager" method="_on_reset_button_pressed"]

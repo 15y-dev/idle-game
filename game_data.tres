@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://d02fddqbedame"]
+
+[ext_resource type="Script" uid="uid://d18u3ht1hxktn" path="res://game_data.gd" id="1_x46ot"]
+[ext_resource type="Script" uid="uid://bfr6mo7m3lf3" path="res://upgrade_data.gd" id="2_2cqyr"]
+[ext_resource type="Resource" uid="uid://b78v73im5al3c" path="res://upgrade_cursor.tres" id="3_30svs"]
+[ext_resource type="Resource" uid="uid://c6sn7bosxfd2t" path="res://upgrade_grandma.tres" id="4_6ertf"]
+
+[resource]
+script = ExtResource("1_x46ot")
+upgrades = Array[ExtResource("2_2cqyr")]([ExtResource("3_30svs"), ExtResource("4_6ertf")])
+metadata/_custom_type_script = "uid://d18u3ht1hxktn"
